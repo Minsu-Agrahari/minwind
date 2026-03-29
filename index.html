@@ -1,16 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Minwind</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MinWind Dark Test</title>
+
+  <style>
+    body {
+      background: #0f172a; /* dark */
+      color: #e5e7eb;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: grid;
+      gap: 20px;
+    }
+
+    .box {
+      background: #1e293b;
+      padding: 12px;
+      border-radius: 8px;
+    }
+  </style>
 </head>
+
 <body>
-		<h1 class="min-bg-grey min-text-green">I am heading</h1>
 
-		<p class="m-5 p-5 m-7">This is margin and padding</p>
+  <h1>MinWind Dark Mode Test</h1>
 
-		<h2 class="p-80">___llll</h2>
+  <div class="container">
+
+    <!-- Text Color -->
+    <div class="box min-text-red">Text Color (red)</div>
+
+    <!-- Background -->
+    <div class="box min-bg-blue">Background (blue)</div>
+
+    <!-- Font Size -->
+    <div class="box min-fs-24">Font Size (24px)</div>
+
+    <!-- Font Weight -->
+    <div class="box min-fw-bold">Font Weight (bold)</div>
+
+    <!-- Padding -->
+    <div class="box min-p-20">Padding (20px)</div>
+
+    <!-- Margin -->
+    <div class="box min-m-20">Margin (20px)</div>
+
+    <!-- Border -->
+    <div class="box min-border-9">Border (2px)</div>
+
+    <!-- Border Radius -->
+    <div class="box min-rounded-1882">Rounded (12px)</div>
+
+    <!-- Width -->
+    <div class="box min-w-200">Width (200px)</div>
+
+    <!-- Height -->
+    <div class="box min-h-100">Height (100px)</div>
+
+    <!-- Position -->
+    <div class="box" style="position: relative; height: 120px;">
+      <div class="min-bg-yellow min-top-10 min-left-10" style="position:absolute;">
+        Positioned Box
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
 </body>
-	<script src="script.js"></script>
 </html>

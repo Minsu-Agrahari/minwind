@@ -1,61 +1,68 @@
 // extract element
-const element  = document.querySelectorAll("*");
+const element = document.querySelectorAll("*");
 
 // extract classes startWith "min-"
 const customClass = [];
-element.forEach(el =>{
+element.forEach(el => {
     el.classList.forEach(cls => {
 
-        if(!cls.includes("-")) return;
+        if (!cls.includes("min-")) return;
 
-        console.log(cls);
-        
         const parts = cls.split("-");
-        // const property = parts[1];
-        // const value = parts[2];
+        const property = parts[1];
+        const value = parts[2];
+        
         // console.log(`--> ${property} - ${value}`)
 
-        if(parts.length === 3){
-            property = parts[1]; 
-        }else{
-            property = parts[0];
-        }
-
-        console.log(`${property} ---- ${parts.length}`);
-
         // background color
-        switch(property){
-            case "bg": // background color
-                bg(el, parts[2]);
+        switch (property) {
+            case "text": // text color: min-text-red
+                applyStyle(el, "color", parts[2]);
                 break;
-            case "text": // text color
-                text(el, parts[2]);
+            case "bg": // background color: min-bg-red
+                applyStyle(el, "background", parts[2]);
                 break;
-            case "p": // padding
-                padding(el, parts[1]);
+            case "fs": // font size: min-fs-50
+                applyStyleUnit(el, "fontSize", parts[2]);
                 break;
-            case "m": // margin
-                margin(el, parts[1]);
+            case "fw": // font weight: min-fw-bold
+                applyStyle(el, "fontWeight", parts[2]);
                 break;
-
-            
+            case "p": // padding: min-p-2
+                applyStyleUnit(el, "padding", parts[2]);
+                break;
+            case "m": // margin: min-m-2
+                applyStyleUnit(el, "margin", parts[2]);
+                break;
+            case "border": // boarder: min-border-size
+                applyStyleUnit(el, "border", parts[2]);
+                break;
+            case "rounded": // border-radius: min-rounded-5
+                applyStyleUnit(el, "borderRadius", parts[2]);
+                break;
+            case "w": // width: min-w-50
+                applyStyleUnit(el, "width", parts[2]);
+                break;
+            case "h": // height: min-h-50
+                applyStyleUnit(el, "height", value);
+                break;
+            case "top": // top: min-top-5
+                applyStyleUnit(el, "top", value);
+                break;
+            case "left": // left: min-left-5
+                applyStyleUnit(el, "left", value);
+                break;
             default:
                 return "";
         }
     })
 })
 
-// background color
-function bg(el, value) {
-    el.style.background = value;
+// -- Helper Function --
+function applyStyle(el, property, value) {
+    el.style[property] = value;
 }
-// text color
-function text(el, value) {
-    el.style.color = value;
+function applyStyleUnit(el, property, value) {
+    el.style[property] = value + "px";
 }
-function padding(el, value){
-    el.style.padding = value + "px";
-}
-function margin(el, value){
-    el.style.margin = value + "px";
-}
+
