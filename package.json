@@ -2,13 +2,13 @@
   "name": "minwind",
   "version": "1.0.1",
   "description": "MinWind is a lightweight JavaScript runtime CSS engine that parses min-* utility classes and applies styles directly to the DOM.",
-  "homepage": "https://github.com/Minsu-Agrahari/Minwind-js#readme",
+  "homepage": "https://github.com/Minsu-Agrahari/minwind#readme",
   "bugs": {
-    "url": "https://github.com/Minsu-Agrahari/Minwind-js/issues"
+    "url": "https://github.com/Minsu-Agrahari/minwind/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Minsu-Agrahari/Minwind-js.git"
+    "url": "git+https://github.com/Minsu-Agrahari/minwind.git"
   },
   "license": "ISC",
   "author": "Minsu Agrahari",
